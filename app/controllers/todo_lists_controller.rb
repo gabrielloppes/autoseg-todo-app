@@ -18,7 +18,7 @@ class TodoListsController < ApplicationController
   def create
     @todo_list = TodoList.new(todo_list_params)
     if @todo_list.save
-      flash[:notice] = 'TO-DO List was successfully created'
+      flash[:notice] = 'To-do List was successfully created'
       redirect_to todo_lists_path
     else
       render [:new, status: :ok, location: @todo_list]
@@ -35,20 +35,22 @@ class TodoListsController < ApplicationController
   end
   
   def destroy
-    @todo_list.destroy
+    if @todo_list.destroy
       flash[:notice] =  'Todo list was successfully destroyed.'
       redirect_to todo_lists_url
+    else
+      flash[:error] = "Todo list can't be created"
+    end
   end
   
   private
-  
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_todo_list
     @todo_list = TodoList.find(params[:id])
   end
   
-  # Only allow a list of trusted parameters through.
+  # Trusted params
   def todo_list_params
-    params.require(:todo_list).permit(:title, :description)
+    params.require[:todo_list].permit(:title, :description)
   end
 end
