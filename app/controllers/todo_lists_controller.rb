@@ -21,7 +21,7 @@ class TodoListsController < ApplicationController
       flash[:notice] = 'To-do List was successfully created'
       redirect_to todo_lists_path
     else
-      render [:new, status: :ok, location: @todo_list]
+      render :new
     end
   end
   
@@ -51,6 +51,6 @@ class TodoListsController < ApplicationController
   
   # Trusted params
   def todo_list_params
-    params.require[:todo_list].permit(:title, :description)
+    params.require(:todo_list).permit(:title, :description)
   end
 end

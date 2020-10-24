@@ -1,7 +1,6 @@
-/* Google Fonts imports */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-/* Partials imports */
+@import "todo_lists";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 /* General resets */
 * {
   padding: 0;

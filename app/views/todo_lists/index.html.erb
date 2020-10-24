@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Todo Lists</h1>
+<header class="main-header">
+  <h1>Todo Lists</h1>
+</header>
+<main>
   <% @todo_lists.each do |todo_list| %>
-    <p>
-      <strong>Title:</strong>
-      <%= todo_list.title %>
-    </p>
-    <p>
-      <strong>Description:</strong>
-      <%= todo_list.description %>
-    </p>
-
-    <div id="todo_items_wrapper">
-      <div id="form">
-        <%= render "shared/form" %>
-      </div>
-    </div>
-    
+  <div class="todo-list-card">
+    <h3><%= todo_list.title %></h3>
+    <p><%= todo_list.description %></p>
+    <%= link_to 'Show', todo_list %>
+    <%= link_to 'Edit', edit_todo_list_path(todo_list) %>
     <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Edit', edit_todo_list_path(todo_list) %> |
-    <%= link_to 'Back', todo_lists_path %>
+  </div>
   <% end %>
-<%= link_to 'New Todo List', new_todo_list_path %>
+  
+  <%= link_to 'New Todo List', new_todo_list_path %>
+</main>
