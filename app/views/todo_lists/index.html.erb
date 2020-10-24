@@ -1,7 +1,7 @@
 <!-- Grid Warpper -->
 <div class="grid-container">
   <p id="notice"><%= notice %></p>
-  
+
   <!-- Sidenav -->
   <aside class="sidenav">
     <div class="logo">
@@ -9,18 +9,17 @@
     </div>
     <%= link_to 'New Todo List', new_todo_list_path, :class => "new-task-btn" %>
   </aside>
- 
+
   <!-- Main content -->
   <main class="main">
     <% @todo_lists.each do |todo_list| %>
     <div class="todo-list-card">
       <h3><%= todo_list.title %></h3>
       <p><%= todo_list.description %></p>
-      <%= link_to 'Show', todo_list %>
-      <%= link_to 'Edit', edit_todo_list_path(todo_list) %>
-      <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Show', todo_list %> <%= link_to 'Edit',
+      edit_todo_list_path(todo_list) %> <%= link_to 'Destroy', todo_list,
+      method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     <% end %>
   </main>
 </div>
-
