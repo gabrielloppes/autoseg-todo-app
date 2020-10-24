@@ -1,0 +1,52 @@
+// .main-wrapper {
+//   display: flex;
+// }
+
+// .sidebar {
+//   height: 100vh;
+//   background: blue;
+//   width: 400px;
+// }
+
+// .todo-list-card {
+//   background: #fff;
+//   padding: 20px;
+//   margin: 10px;
+// }
+
+// .todo-list-card h3 {
+//   font-family: 'Nunito';
+//   font-weight: 700;
+//   font-size: 1.3rem;
+// }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'sidenav main';
+  height: 100vh;
+}
+
+// Sidenav grid config
+.sidenav {
+  grid-area: sidenav;
+  background: #d9d9d9;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 70px 80px 1fr;
+  grid-template-areas: 'logo button main-side-content';
+}
+
+.sidenav.logo {
+  grid-area: main-side-content;
+}
+
+.sidenav.new-task-btn {
+  grid-area: logo;
+}
+
+// Main section grid config
+.main {
+  grid-area: main;
+}
