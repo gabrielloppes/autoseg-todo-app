@@ -13,12 +13,17 @@
   <!-- Main content -->
   <main class="main">
     <% @todo_lists.each do |todo_list| %>
-    <div class="todo-list-card">
-      <h3><%= todo_list.title %></h3>
-      <p><%= todo_list.description %></p>
-      <%= link_to 'Show', todo_list %> <%= link_to 'Edit',
-      edit_todo_list_path(todo_list) %> <%= link_to 'Destroy', todo_list,
-      method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="card-list">
+      <div class="card-list-infos">
+        <h2><%= todo_list.title %></h2>
+        <p><%= todo_list.description %></p>
+        <%= link_to todo_list do %> 
+          <i class="fa fa-trash-alt"></i>
+          <i class="far fa-eye"></i>
+        <% end %>
+        <%= link_to 'Edit',edit_todo_list_path(todo_list) %> 
+        <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
     <% end %>
   </main>

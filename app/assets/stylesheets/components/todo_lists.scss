@@ -22,7 +22,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 290px 1fr;
+  grid-template-columns: 330px 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: 'sidenav main';
   height: 100vh;
@@ -31,7 +31,7 @@
 // Sidenav grid config
 .sidenav {
   grid-area: sidenav;
-  background: #f8f8f8;
+  background: #e7eeff;
   height: 100vh;
   display: grid;
   grid-template-rows: 120px 80px 1fr;
@@ -46,7 +46,7 @@
   align-self: center;
   justify-self: center;
   font-weight: 700;
-  font-family: Nunito;
+  font-family: 'Montserrat';
   font-size: 1.7rem;
 }
 
@@ -59,13 +59,13 @@
   height: 40px;
   align-self: center;
   justify-self: center;
-  background: #0052cc;
+  background: #fc4a1a;
   padding: 25px 30px;
   color: #fff;
   text-decoration: none;
   font-family: 'Nunito';
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 2px;
   box-shadow: 0px 4px 10px rgba(16, 156, 241, 0.24);
   transition: 0.5s ease;
 }
