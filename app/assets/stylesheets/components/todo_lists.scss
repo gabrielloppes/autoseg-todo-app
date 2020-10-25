@@ -18,24 +18,28 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  background: #fff;
-  margin: 20px;
+  padding: 0 36px;
+  margin: 0 0 20px 0;
   border-radius: 4px;
+  background: #fff;
+  box-shadow: 18px 12px 50px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
 }
 
 header h1 {
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 2em;
+  color: #4a4a4a;
 }
 
 .new-task-btn {
   width: 160px;
   height: 42px;
-  background: #34aff9;
+  background: #2f84ed;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,17 +49,13 @@ header h1 {
   font-weight: 600;
 }
 
-.new-task-btn:hover {
-  background: #037ecf;
-}
-
 // ONLY ASIDE STYLES (SIDENAV)
 aside {
   grid-area: aside;
-  background-color: #fff;
+  background: #fff;
   box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
   display: grid;
-  grid-template-rows: 150px 1fr;
+  grid-template-rows: 130px 1fr;
   grid-template-areas:
     'logo'
     'content';
@@ -68,32 +68,43 @@ aside h1 {
   align-self: center;
   justify-self: center;
   font-family: Poppins;
+  color: #4087e9;
 }
 
 aside .aside_list {
-  margin-top: 85px;
+  grid-area: content;
+  align-items: center;
+  margin-top: 42px;
   list-style: none;
+  justify-self: center;
 }
 
 aside .aside_list .aside_list-item {
-  padding: 20px 20px 20px 40px;
+  // padding: 20px 20px 20px 40px;
   color: #037ecf;
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
+  font-weight: 400;
+  color: #4a4a4a;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+aside .aside_list .aside_list-item:hover {
+  background-color: #037ecf;
+  cursor: pointer;
+  color: #fff;
 }
 
 // ONLY MAIN SECTION STYLES
 main {
   grid-area: main;
-  display: grid;
-  grid-template-columns: 50% auto;
 }
 
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, auto));
-  column-count: 2;
   grid-gap: 10px;
-  margin: 0 20px 20px 20px;
+  margin: 30px 36px;
 }
 
 .card-item {
@@ -101,9 +112,16 @@ main {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-color: #fff;
-  filter: drop-shadow(0px 6px 18px rgba(0, 0, 0, 0.06));
-  border-radius: 4px;
+  background-color: #f6fafb;
+  border-radius: 5px;
+  height: 250px;
+  background: #fff;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.card-item p {
+  font-family: Poppins;
+  font-weight: 400;
 }
 
 .card-item .intro {
@@ -116,4 +134,17 @@ main {
 .card-item .intro p {
   font-family: 'Poppins';
   font-weight: 600;
+}
+
+.card-item .card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100px;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.card-item .card-info i {
+  color: #4087e9;
 }
