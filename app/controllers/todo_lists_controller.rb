@@ -51,6 +51,6 @@ class TodoListsController < ApplicationController
   
   # Trusted params
   def todo_list_params
-    params.require(:todo_list).permit(:title, :description, :created_at.Time.now)
+    params.require(:todo_list).permit(:title, :description, :created_at)
   end
 end
