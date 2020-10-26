@@ -2,43 +2,35 @@
 <p id="notice"><%= notice %></p>
 
 <div class="grid-container">
-  <!-- Header Section -->
-  <header>
+  <%= render 'shared/navbar' %>
+
+  <section class="create_new">
     <h1>Hello User</h1>
-    <%= link_to 'New Todo List', new_todo_list_path, :class => "new-task-btn" %>
-  </header>
-  <!-- Sidebar Section -->
-  <aside>
-    <h1>Your Tasks</h1>
-    <ul class="aside_list">
-      <ul class="aside_list-item">Favorites</ul>
-      <ul class="aside_list-item">Private Lists</ul>
-      <!-- <ul class="aside_list-item"></ul> -->
-    </ul>
-  </aside>
+    <%= link_to 'New Todo List', new_todo_list_path, :class => "new_task-btn" %>
+  </section>
+
   <!-- Main Sewction -->
-  <main>
+  <main class="main">
     <% @todo_lists.each do |todo_list| %>
     <div class="card-container">
       <div class="card-item">
-          <div class="intro">
-            <h2><%= todo_list.title %></h2>
-            <p><%= todo_list.created_at.strftime("%m / %d / %Y") %></p>
-          </div>
-          <p><%= todo_list.description %></p>
-          <div class="card-info">
-            <%= link_to todo_list do %> 
-              <i class="far fa-eye"></i>
-            <% end %>
-            <%= link_to edit_todo_list_path(todo_list) do %>
-              <i class="far fa-edit"></i>
-            <% end %> 
-            <%= link_to todo_list, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-          </div>
+        <div class="intro">
+          <h2><%= todo_list.title %></h2>
+          <p><%= todo_list.created_at.strftime("%m / %d / %Y") %></p>
+        </div>
+        <p class="description"><%= todo_list.description %></p>
+        <div class="card-info">
+          <%= link_to todo_list do %>
+          <i class="far fa-eye"></i>
+          <% end %> <%= link_to edit_todo_list_path(todo_list) do %>
+          <i class="far fa-edit"></i>
+          <% end %> <%= link_to todo_list, method: :delete, data: { confirm:
+          'Are you sure?' } do %>
+          <i class="far fa-trash-alt"></i>
+          <% end %>
         </div>
       </div>
+    </div>
     <% end %>
   </main>
 </div>

@@ -1,0 +1,44 @@
+.show_grid-container {
+  display: grid;
+  grid-template-rows: 200px 50px 1fr;
+  grid-template-areas:
+    'header'
+    'create_new_todo'
+    'main';
+    height: 100vh;
+}
+
+#form {
+  grid-area: create_new_todo;
+  margin: 0 36px;
+}
+// HEADER SECTION STYLES ONLY
+.show_header {
+  grid-area: header;
+  // padding: 20px;
+  margin: 36px;
+}
+
+.show_header h1 {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 2.1rem;
+}
+
+.show_header h3 {
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+// MAIN SECTION STYLES ONLY
+.show_main {
+  grid-area: main;
+}
+
+.show_card-item {
+  padding: 20px;
+  margin: 36px;
+  border-bottom: 1px solid rgba(0,0,0,0.3) ;
+  background-color: #FFF;
+  border-radius: 5px;
+}
