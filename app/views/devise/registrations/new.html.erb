@@ -3,7 +3,7 @@
   <div class="new_registration_form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <h2>Log in</h2>
+      <h2>Sign Up</h2>
       <section class="login-fields">
         <div class="email-field">
           <%= f.label :email %>
@@ -12,7 +12,7 @@
         <div class="password-confirmation-field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-            <%= @minimum_password_length %> characters minimum)
+            <%= @minimum_password_length %> (characters minimum)
           <% end %>
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
@@ -22,7 +22,7 @@
         </div>
       </section>
       <div class="new_session_sign_up_wrapper">
-        <%= f.submit "Sing Up" %>
+        <%= f.submit "Sign Up" %>
       </div>
     <% end %>
   </div>
@@ -33,44 +33,3 @@
   </div>
   <%= image_tag 'https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?cs=srgb&dl=pexels-chris-czermak-2444429.jpg&fm=jpg' %>
 </main>
-
-
-<!-- <main class="new_registration_wrapper">
-  <h1 class="new_registration_logo">Todo.io</h1>
-  <div class="new_registration_form">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <h2>Sign Up</h2>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="email-field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-
-      <div class="new_registration_wrapper">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="sign_in_link">
-    <p>
-      Already have an account? <%= render "devise/shared/sign_in" %>
-    </p>
-  </div>
-  <%= image_tag 'https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?cs=srgb&dl=pexels-chris-czermak-2444429.jpg&fm=jpg' %>
-</main> -->
-
-

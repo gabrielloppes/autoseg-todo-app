@@ -11,7 +11,9 @@
           <a href="">Private Lists</a>
         </li>
         <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
           <i class="fas fa-sign-out-alt"></i>
+        <% end %>
         </li>
         <!-- <ul class="aside_list-item"></ul> -->
       </ul>
