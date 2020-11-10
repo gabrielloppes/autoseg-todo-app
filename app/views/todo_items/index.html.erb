@@ -1,0 +1,30 @@
+
+<h1>Listing tasks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todo_items.each do |todo_item| %>
+  <tr>
+    <td><%= todo_item.name %></td>
+    <td><%= todo_item.description %></td>
+    <td><%= todo_item.status %></td>
+    <td><%= todo_item.todo_list %></td>
+    <td><%= link_to 'Show', [todo_item.todo_list, todo_item] %></td>
+    <td><%= link_to 'Edit', edit_todo_list_todo_item_path(todo_item.todo_list, todo_item) %></td>
+    <td><%= link_to 'Destroy', [todo_item.todo_list, todo_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_todo_list_task_path(params[:todo_list_id]) %>

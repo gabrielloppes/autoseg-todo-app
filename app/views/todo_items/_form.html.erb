@@ -1,4 +1,30 @@
-<%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
- <%= f.text_field :content, placeholder: "New Todo" %>
- <%= f.submit %>
+
+<%= form_for([@todo_item.todo_list, @todo_item]) do |f| %>
+  <% if @todo_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo_item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @todo_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, Todo_Item::STATUS_OPTIONS, {} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

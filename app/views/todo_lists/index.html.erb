@@ -15,18 +15,19 @@
     <div class="card-container">
       <div class="card-item">
         <div class="intro">
-          <h2><%= todo_list.title %></h2>
-          <p><%= todo_list.created_at.strftime("%m / %d / %Y") %></p>
+          <h2><%= todo_list.name %></h2>
         </div>
         <p class="description"><%= todo_list.description %></p>
         <div class="card-info">
           <%= link_to todo_list do %>
-          <i class="far fa-eye"></i>
-          <% end %> <%= link_to edit_todo_list_path(todo_list) do %>
-          <i class="far fa-edit"></i>
-          <% end %> <%= link_to todo_list, method: :delete, data: { confirm:
+            <i class="far fa-eye"></i>
+          <% end %> 
+          <%= link_to edit_todo_list_path(todo_list) do %>
+            <i class="far fa-edit"></i>
+          <% end %> 
+          <%= link_to todo_list, method: :delete, data: { confirm:
           'Are you sure?' } do %>
-          <i class="far fa-trash-alt"></i>
+            <i class="far fa-trash-alt"></i>
           <% end %>
         </div>
       </div>

@@ -39,8 +39,6 @@ class TodoListsController < ApplicationController
     if @todo_list.destroy
       flash[:notice] =  'Todo list was successfully destroyed.'
       redirect_to todo_lists_url
-    else
-      flash[:error] = "Todo list can't be created"
     end
   end
   

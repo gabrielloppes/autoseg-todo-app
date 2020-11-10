@@ -10,20 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_205530) do
+ActiveRecord::Schema.define(version: 2020_11_10_230751) do
 
-  create_table "todo_items", force: :cascade do |t|
-    t.string "content"
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.integer "todo_list_id", null: false
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "completed_at"
+    t.index ["todo_list_id"], name: "index_favorites_on_todo_list_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "todo_items", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "status"
+    t.integer "todo_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
   end
 
   create_table "todo_lists", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.text "description"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -43,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_10_26_205530) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "todo_lists"
+  add_foreign_key "favorites", "users"
   add_foreign_key "todo_items", "todo_lists"
   add_foreign_key "todo_lists", "users"
 end
