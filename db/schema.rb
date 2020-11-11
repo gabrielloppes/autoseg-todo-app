@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2020_11_10_230751) do
   end
 
   create_table "todo_items", force: :cascade do |t|
-    t.string "name"
     t.text "description"
     t.string "status"
     t.integer "todo_list_id", null: false
