@@ -51,14 +51,14 @@ class TodoListsController < ApplicationController
     end
   end
 
-  # Método para tornar uma determinada lista privada
+  # Torna uma determinada lista privada
   def make_it_private
     @todo_list.update(status: :personal)
     flash[:notice] = "'#{@todo_list.name}' is now private"
     redirect_to todo_list_path(@todo_list)
   end
 
-  # Método para tornar uma determinada lista publica
+  # Torna uma determinada lista publica
   def make_it_public
     @todo_list.update(status: :shareable)
     flash[:notice] = "'#{@todo_list.name}' is now public"
